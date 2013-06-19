@@ -61,4 +61,14 @@ project. The build output is displayed in the *compilation* buffer."
   (interactive (list (eclim--maven-lifecycle-phase-read)))
   (eclim-maven-run phase))
 
+;; Guest the test case name of current file
+(defun guess-test-case (filename)
+  (if (string-match "[a-zA-Z0-9]+Test\.java" filename) filename (replace-regexp-in-string "\.java" "Test.java" filename)))
+
+;; Guess the test case name and run it through maven
+(defun eclim-maven-test ()
+  (interactive)
+  (eclim--maven-execute
+   (concat "test -Dsurefire.useFile=false -Dtest=" (guess-test-case (buffer-name(current-buffer))))))
+
 (provide 'eclim-maven)
