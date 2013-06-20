@@ -17,7 +17,8 @@
  * Support for auto-complete-mode
  * eclimd module to start/stop eclimd from emacs
  * Generation of getter and setter methods.
- 
+ * Add method to run single unit test.
+
 === Bugfixes
  * fixed a problem on startup when the eclimd server was not started
  * bugfix in call to eclim-call-process
