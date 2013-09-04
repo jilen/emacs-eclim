@@ -3,6 +3,6 @@
 # --
 package ${1:package.path};
 
-${3:public} class ${2:Name} {
+public class ${2:`(file-name-sans-extension (buffer-name))`}$3 {
     $0
 }
