@@ -7,8 +7,8 @@
 (require 'compile)
 (require 'eclim)
 (require 's)
-(define-key eclim-mode-map (kbd "C-c C-t s") 'eclim-test-switch)
-(define-key eclim-mode-map (kbd "C-c C-t r") 'eclim-run-test)
+(define-key eclim-mode-map (kbd "C-t s") 'eclim-test-switch)
+(define-key eclim-mode-map (kbd "C-t r") 'eclim-run-test)
 
 (defun guess-test-name (name)
   (replace-regexp-in-string
